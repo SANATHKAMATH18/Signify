@@ -7,7 +7,7 @@
  --color-primary: #2E7D32; /* Deep Forest Green */
  --color-primary-dark: #212529; /* Kept from original */
  --color-secondary: #81C784; /* Soft Mint Green */
- --color-accent: #FFC107; /* Warm Amber/Gold */
+ --color-accent: #07b0ff; /* Warm Amber/Gold */
  --color-danger: #D32F2F; /* Refined Red */
  --color-success: #4CAF50; /* Kept from original */
  --color-text: #333; /* Default text */
@@ -168,7 +168,7 @@ canvas {
 }
 
 .section-heading {
- color: var(--color-danger);
+ color: var(--color-primary);
 }
 
 .normal-text {
@@ -220,9 +220,9 @@ hr.custom-line {
 .signs {
  margin-top: var(--spacing-sm);
  height: 35px;
- color: var(--color-text-light);
+ color: var(--color-text-muted);
  font-weight: var(--font-weight-bold);
- background-color: var(--color-primary); /* Changed to a variable */
+ background-color: var(--color-text-light); /* Changed to a variable */
  border-radius: var(--border-radius-base);
  padding: var(--spacing-xs) var(--spacing-sm); /* Added padding */
  display: inline-block; /* Better for tag-like elements */

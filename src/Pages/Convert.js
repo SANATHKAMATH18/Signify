@@ -173,25 +173,25 @@ function Convert() {
             Speech Recognition: {listening ? 'on' : 'off'}
           </label>
           <div className='space-between'>
-            <button className="btn btn-primary btn-style w-33" onClick={startListening}>
+            <button className="btn btn-link text-info btn-style w-33" onClick={startListening}>
               Mic On <i className="fa fa-microphone"/>
             </button>
-            <button className="btn btn-primary btn-style w-33" onClick={stopListening}>
+            <button className="btn btn-link text-info btn-style w-33" onClick={stopListening}>
               Mic Off <i className="fa fa-microphone-slash"/>
             </button>
-            <button className="btn btn-primary btn-style w-33" onClick={resetTranscript}>
+            <button className="btn btn-link text-danger btn-style w-33" onClick={resetTranscript}>
               Clear
             </button>
           </div>
           <textarea rows={3} ref={textFromAudio} value={transcript} placeholder='Speech input ...' className='w-100 input-style' />
-          <button onClick={() => {sign(textFromAudio)}} className='btn btn-primary w-100 btn-style btn-start'>
+          <button onClick={() => {sign(textFromAudio)}} className='btn btn-link text-success w-100 btn-style btn-start'>
             Start Animations
           </button>
           <label className='label-style'>
             Text Input
           </label>
           <textarea rows={3} ref={textFromInput} placeholder='Text input ...' className='w-100 input-style' />
-          <button onClick={() => {sign(textFromInput)}} className='btn btn-primary w-100 btn-style btn-start'>
+          <button onClick={() => {sign(textFromInput)}} className='btn btn-link text-success w-100 btn-style btn-start'>
             Start Animations
           </button>
         </div>
