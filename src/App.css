@@ -1,0 +1,229 @@
+/*
+ * === ROOT VARIABLES ===
+ * Centralizing all your theme values makes changes easy.
+ */
+:root {
+ /* Colors (New "Earthy Green" Theme) */
+ --color-primary: #2E7D32; /* Deep Forest Green */
+ --color-primary-dark: #212529; /* Kept from original */
+ --color-secondary: #81C784; /* Soft Mint Green */
+ --color-accent: #FFC107; /* Warm Amber/Gold */
+ --color-danger: #D32F2F; /* Refined Red */
+ --color-success: #4CAF50; /* Kept from original */
+ --color-text: #333; /* Default text */
+ --color-text-light: white;
+ --color-text-muted: #6c757d; /* Muted Gray */
+ --color-border: #E0E0E0; /* Light Gray */
+ --color-card-footer: var(--color-primary); /* Uses new primary color */
+ --color-card-bg: linear-gradient(50deg, #E8F5E9, #fff); /* Light green gradient */
+
+ /* Typography */
+ --font-size-base: 1rem; /* 16px */
+ --font-size-lg: 1.25rem; /* 20px */
+ --font-size-xl: 1.5rem; /* 24px */
+ --font-size-xxl: 1.875rem; /* 30px (approx) */
+ --font-weight-bold: bold;
+
+ /* Spacing */
+ --spacing-xs: 5px;
+ --spacing-sm: 10px;
+ --spacing-md: 20px;
+ --spacing-lg: 30px;
+ --spacing-xl: 50px;
+
+ /* Other */
+ --navbar-height: 70px;
+ --border-radius-base: 5px;
+ --border-radius-large: 30px;
+ --border-width-base: 1px;
+ --border-width-md: 2px;
+ --border-width-lg: 3px;
+}
+
+body {
+ /* This creates a smooth scroll behavior when clicking anchor links */
+ scroll-padding-top: var(--navbar-height);
+ padding-top: var(--navbar-height);
+ font-family: Arial, sans-serif; /* Added a default font */
+ color: var(--color-text);
+}
+
+.heading {
+ margin-top: var(--spacing-lg);
+ text-align: center;
+}
+
+.space-between {
+ display: flex;
+ /* flex-direction: row; is the default, so it's not needed */
+ justify-content: space-between;
+}
+
+/* * === FORM & BUTTON IMPROVEMENT ===
+* Use a parent container with 'gap' instead of margins on each element.
+* See 'How to Use' section below.
+*/
+.form-layout {
+ display: flex;
+ flex-direction: column;
+ gap: var(--spacing-md);
+}
+
+.label-style {
+ font-size: var(--font-size-lg);
+ /* margin-top: 30px; -- This is now handled by .form-layout 'gap' */
+}
+
+.input-style {
+ padding: var(--spacing-xs);
+ font-size: var(--font-size-lg);
+ /* margin-top: 20px; -- Handled by 'gap' */
+}
+
+.btn-style {
+ padding: var(--spacing-sm);
+ font-size: var(--font-size-lg);
+ cursor: pointer;
+ border: none;
+ border-radius: var(--border-radius-base);
+ /* margin-top: 20px; -- Handled by 'gap' */
+}
+
+/* This class can be added to the .form-layout for extra space */
+.btn-gap {
+ margin-top: var(--spacing-xl);
+}
+
+/* * === LAYOUT ===
+* Using flex-basis is more robust than 'width' for flex items.
+* This class is designed to be a child of a .space-between container.
+*/
+.w-33 {
+ flex-basis: 32%; /* Kept your 32% for existing layout */
+}
+
+/* * === BOT STYLES ===
+*/
+.bot-label {
+ margin-top: var(--spacing-md);
+ font-size: var(--font-size-xl);
+ text-align: center;
+}
+
+.bot-image {
+ display: block; /* Simpler for margin: auto */
+ margin: var(--spacing-sm) auto;
+ border-radius: var(--border-radius-large);
+ border: var(--border-width-md) solid var(--color-border);
+ /* Added transition for a smooth hover */
+ transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.bot-image:hover {
+ /* * Using box-shadow instead of 'border-width' prevents layout shift.
+ * Using 'var(--color-primary)' as an example hover color.
+ */
+ box-shadow: 0 0 0 3px var(--color-primary);
+ transform: scale(1.02); /* Added a subtle zoom effect */
+}
+
+canvas {
+ /* Used shorthand 'border' property */
+ border: var(--border-width-lg) solid var(--color-text);
+}
+
+.btn-start {
+ background-color: var(--color-success);
+ color: var(--color-text-light);
+ border: none;
+}
+
+/* * === ELEMENT & UTILITY STYLES ===
+*/
+
+/* Replaced global 'i' tag selector with a reusable class */
+.icon-style {
+ margin-left: var(--spacing-md);
+}
+
+.home-gradient {
+ /* Added 'display: flex;' which was missing */
+ display: flex;
+ flex-direction: column;
+ background: var(--color-primary-dark);
+ background: linear-gradient(
+  180deg,
+  var(--color-primary-dark) 6%,
+  var(--color-primary) 45%,
+  rgba(14, 186, 235, 0.52) 100%
+ );
+ height: calc(100vh - var(--navbar-height));
+}
+
+.divider {
+ display: block;
+ height: 4px;
+ width: 5rem;
+ background: var(--color-accent);
+}
+
+.section-heading {
+ color: var(--color-danger);
+}
+
+.normal-text {
+ font-size: var(--font-size-lg);
+}
+
+/* * === SEMANTIC <hr> STYLE ===
+* Replaced .hor-line with a style for the actual <hr> tag.
+* Just use <hr> in your HTML.
+*/
+hr.custom-line {
+ border: 0;
+ clear: both;
+ display: block;
+ width: 85%;
+ background-color: var(--color-border);
+ height: var(--border-width-base);
+ margin: var(--spacing-md) auto; /* Added margin for spacing */
+}
+
+/* * === FOOTER STYLES ===
+*/
+.footer-text,
+.footer-link {
+ text-decoration: none;
+ color: var(--color-text-muted);
+}
+
+.footer-link:hover {
+ color: var(--color-text-light);
+}
+
+/* * === CARD STYLES ===
+*/
+.card-footer-style {
+ background-color: var(--color-card-footer);
+ color: var(--color-text-light);
+}
+
+.card-background {
+ background: var(--color-card-bg);
+ transition: box-shadow 0.3s ease; /* Added transition */
+}
+
+.card-background:hover {
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.signs {
+ margin-top: var(--spacing-sm);
+ height: 35px;
+ color: var(--color-text-light);
+ font-weight: var(--font-weight-bold);
+ background-color: var(--color-primary); /* Changed to a variable */
+ border-radius: var(--border-radius-base);
+ padding: var(--spacing-xs) var(--spacing-sm); /* Added padding */
+ display: inline-block; /* Better for tag-like elements */
+}
